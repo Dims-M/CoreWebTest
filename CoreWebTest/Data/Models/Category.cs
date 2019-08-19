@@ -13,6 +13,6 @@ namespace CoreWebTest.Data.Models
         public int Id { set; get; }
         public string CategoryName { set; get; }
         public string desc { set; get; } // описание 
-      //  public int Id { set; get; }
+        public List <Car>  Cars{ set; get; } // лист для хранения товаров
     }
 }

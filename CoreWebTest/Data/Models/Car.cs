@@ -12,12 +12,12 @@ namespace CoreWebTest.Data.Models
     {
         public int Id { set; get; }
         public string Name { set; get; }
-        public string ShortDesc { set; get; }
-        public string LognDesc { set; get; }
-        public string Img { set; get; }
+        public string ShortDesc { set; get; } // крадкое описание
+        public string LongDesc { set; get; } // большое описание
+        public string Img { set; get; } // картинка
         public ushort price { set; get; }
-        public bool IsFavourite { set; get; }
-        public int available { set; get; }
+        public bool IsFavourite { set; get; } // отображение на главнойй странице
+        public int available { set; get; } // товар на складе. Сколько в запасе
         public ushort CategoryID { set; get; }
         public virtual Category Category { set; get; } // Свойство хранит категории товаров
     }
