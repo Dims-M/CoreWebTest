@@ -11,24 +11,30 @@ namespace CoreWebTest
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        //Этот метод вызывается средой выполнения. Этот метод используется для добавления служб в контейнер.
+        // Дополнительные сведения о настройке приложения см. На странице https://go.microsoft.com/fwlink/?LinkID=398940
+        // для регистрации дополнительных модулей
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(); // gподключаем модуль мвс
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        //Этот метод вызывается средой выполнения. Этот метод используется для настройки конвейера HTTP-запросов.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseDeveloperExceptionPage(); //отображаем страцицы с ошибками
+            app.UseStatusCodePages(); // оображаем статусы страничек //400, 500, 200
+            app.UseStaticFiles(); // отображаем статические файлы 
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
         }
     }
 }
