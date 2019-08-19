@@ -25,6 +25,7 @@ namespace CoreWebTest
             app.UseDeveloperExceptionPage(); //отображаем страцицы с ошибками
             app.UseStatusCodePages(); // оображаем статусы страничек //400, 500, 200
             app.UseStaticFiles(); // отображаем статические файлы 
+            app.UseMvcWithDefaultRoute();  // включение мвс патерна  отслеживание урл адреса. и вьюхи к этим адресам
 
             //if (env.IsDevelopment())
             //{

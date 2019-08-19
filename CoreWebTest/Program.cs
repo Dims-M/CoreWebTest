@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 
 namespace CoreWebTest
 {
+    //https://itproger.com/courses/
+
     public class Program
     {
         public static void Main(string[] args)
