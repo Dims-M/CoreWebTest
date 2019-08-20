@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoreWebTest.Data.interfaces
 {
+    /// <summary>
+ /// Интерфейс для получения данных из категорий
+ /// </summary>
     interface ICarsCategory
     {
         /// <summary>
