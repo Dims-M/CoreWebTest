@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreWebTest.Data.interfaces;
+using CoreWebTest.Data.Mocks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +18,8 @@ namespace CoreWebTest
         // для регистрации дополнительных модулей
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IAllCars, MockCars>(); // Позволяет обьединить интерфейс и класс реализовывабщий этот интерфейс // Добавляет временную службу типа, указанного в поле Тип службы с фабрикой
+            services.AddTransient<ICarsCategory, MockCategory>();
             services.AddMvc(); // gподключаем модуль мвс
         }
 

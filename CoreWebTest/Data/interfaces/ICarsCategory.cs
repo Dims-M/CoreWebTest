@@ -9,7 +9,7 @@ namespace CoreWebTest.Data.interfaces
     /// <summary>
  /// Интерфейс для получения данных из категорий
  /// </summary>
-    interface ICarsCategory
+   public interface ICarsCategory
     {
         /// <summary>
         /// Интерфейс для получения данных из категорий

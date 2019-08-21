@@ -9,7 +9,7 @@ namespace CoreWebTest.Data.interfaces
     /// <summary>
     /// Интерфейсдля работы стоварами
     /// </summary>
-    interface IAllCars
+  public  interface IAllCars
     {
         // тим перечесление  IEnumerable перечислитель, который поддерживает простой перебор элементов неуниверсальной коллекции.
         //Получаем все товары
