@@ -62,8 +62,8 @@ namespace CoreWebTest.Data.Mocks
                     LongDesc = " A-класса в 1997 году серия представляла собой самые малые автомобили как по габаритам, так и по классификации в иерархии марки Mercedes-Benz. C-класс включает в себя четыре поколения: W202, представленный в 1992 году, W203, сошедший с конвейера 18 июля 2000 года, W204, выпускавшегося с 2007 года и W205, дебютировавшего в 2014 году и производящегося до настоящего времени.",
                     Img = "https://s1.1zoom.ru/big7/701/Mercedes-Benz_White_437294.jpg",
                     price = 40000,
-                    IsFavourite = true,
-                    available = true,
+                    IsFavourite = false,
+                    available = false,
                     Category = _carsCategory.AllCategories.Last()
                 },
                  new Car
@@ -73,7 +73,7 @@ namespace CoreWebTest.Data.Mocks
                     LongDesc = "Электромобиль японского концерна Nissan, серийно выпускаемый с весны 2010 года. Мировая премьера состоялась на международном Токийском автосалоне в 2009 году. Заказы на модель японские и американские дилеры компании начали принимать 1 апреля 2010 года",
                     Img = "https://www.avtorinok.ru/photo/Nissan_Leaf_pic_103946.jpg",
                     price = 14000,
-                    IsFavourite = true,
+                    IsFavourite = false,
                     available = true,
                     Category = _carsCategory.AllCategories.First()
                 }

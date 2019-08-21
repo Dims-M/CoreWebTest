@@ -13,7 +13,7 @@ namespace CoreWebTest.Data.interfaces
     {
         // тим перечесление  IEnumerable перечислитель, который поддерживает простой перебор элементов неуниверсальной коллекции.
         //Получаем все товары
-        IEnumerable<Car> Cars { get; set; }
+        IEnumerable<Car> Cars { get;  }
       
         //Получаем избранный товар. Тот товар который будет показан на главной странице
         IEnumerable<Car> GeFavtCars { get; set; }
