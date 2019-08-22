@@ -1,4 +1,5 @@
 ﻿using CoreWebTest.Data.interfaces;
+using CoreWebTest.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -24,9 +25,13 @@ namespace CoreWebTest.Controllers
 
         public ViewResult List()
         {
-            ViewBag.Category = "*******";
-            var cars = _allCars.Cars; // получаем все машины из моделеей через интерфейс
-            return View(cars); //Возврат вьюха
+            CarsListViewModel obj = new CarsListViewModel();
+            obj.AllCars = _allCars.Cars; // получение всех автомоблей
+            obj.CurrentCategory = "Автомобили"; // категории товара
+
+           // ViewBag.Category = "*******";
+           //  var cars = _allCars.Cars; // получаем все машины из моделеей через интерфейс
+            return View(obj); //Возврат вьюха
         }
     }
 }

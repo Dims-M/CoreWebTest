@@ -1,5 +1,5 @@
-﻿@using CoreWebTest.Data.Models;
-@model IEnumerable<Car>
+﻿@using CoreWebTest.ViewModels;
+@model CarsListViewModel;
     @{
         Layout = null;
     }
@@ -13,13 +13,13 @@
     </head>
     <body>
         <h2>Все наши автомобили которые есть в наличии</h2>
-        @{ <h1>@ViewBag.Category</h1>
-        foreach (var car in Model) // c помощью специалнього обьекта Model. в него передается данные при вызове вьюхи
+        @{ <h1>@Model.CurrentCategory</h1> //<h1>@ViewBag.Category</h1>
+        foreach (var car in Model.AllCars) // c помощью специалнього обьекта Model. в него передается данные при вызове вьюхи
         {
             <div>
                 <h2>Модель: @car.Name</h2>
                 <p>Цена: @car.price.ToString("c")</p>
-                <h2>Цена: @car.ShortDesc</h2>
+                <h2>Описание: @car.ShortDesc</h2>
             </div>
 
         }
