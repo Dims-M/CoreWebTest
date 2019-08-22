@@ -10,21 +10,22 @@ namespace CoreWebTest.Controllers
     /// <summary>
     /// Класс контроллера
     /// </summary>
-    public class CarControlller : Controller
+    public class CarsControlller : Controller
     {
         private readonly IAllCars _allCars;
         private readonly ICarsCategory _carsCategory;
        
         //конструктор
-      public  CarControlller(IAllCars iAllCars, ICarsCategory iCarsCat) // передаем 2 обьекта интерфейса. иза связки интерфейса и класса который его реализует.  то мы можем работать с этим классом
+      public  CarsControlller(IAllCars iAllCars, ICarsCategory iCarsCat) // передаем 2 обьекта интерфейса. иза связки интерфейса и класса который его реализует.  то мы можем работать с этим классом
         {
-            _allCars = iAllCars;
+            _allCars = iAllCars; //нужные обьекты 
             _carsCategory = iCarsCat;
         }
 
         public ViewResult List()
         {
-            return View(); //Возврат вьюха
+            var cars = _allCars.Cars; // получаем все машины из моделеей через интерфейс
+            return View(cars); //Возврат вьюха
         }
     }
 }

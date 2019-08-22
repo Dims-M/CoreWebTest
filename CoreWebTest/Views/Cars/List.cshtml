@@ -1,0 +1,28 @@
+﻿@using CoreWebTest.Data.Models;
+@model  IEnumerable<Car> 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <h2>Все наши автомобили которые есть в наличии</h2>
+    @{ 
+        foreach (var car in Model) // c помощью специалнього обьекта Model. в него передается данные при вызове вьюхи
+        {
+        <div>
+            <h2>Модель: @car.Name</h2>
+            <p>Цена: @car.price.ToString("c")</p>
+            <h2>Цена: @car.ShortDesc</h2>
+        </div>
+
+        }
+    }
+</body>
+</html>

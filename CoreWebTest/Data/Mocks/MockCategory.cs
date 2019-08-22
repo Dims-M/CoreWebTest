@@ -13,13 +13,16 @@ namespace CoreWebTest.Data.Mocks
     public class MockCategory : ICarsCategory
     {
         // реализуем интервейс
-        public IEnumerable<Category> AllCategories { 
-            get {return new List<Category>{ // возращаем новый лист с категориями
-            new Category{CategoryName ="Электромобили",desc ="Современнные высокотехнологичный вид транспорта" },
-            new Category{CategoryName ="Классичискте автомобили",desc ="Машины с двигателем внутреннего сгорания" },
-            new Category{CategoryName ="Дизель автомобили",desc ="Машины с дизельным двигателем внутреннего сгорания" }
-       };
-};
+        public IEnumerable<Category> AllCategories {
+            get { return new List<Category>
+            {
+                // возращаем новый лист с категориями
+                new Category { CategoryName = "Электромобили", desc = "Современнные высокотехнологичный вид транспорта" },
+                new Category { CategoryName = "Классичискте автомобили", desc = "Машины с двигателем внутреннего сгорания" },
+                new Category { CategoryName = "Дизель автомобили", desc = "Машины с дизельным двигателем внутреннего сгорания" }
+            };
+
+            }
         }
     }
 }
