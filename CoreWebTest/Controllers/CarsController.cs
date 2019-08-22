@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CoreWebTest.Controllers
 {
     /// <summary>
-    /// Класс контроллера
+    /// Класс контроллера. отвечает за все товары
     /// </summary>
     public class CarsController : Controller
     {
@@ -24,7 +24,7 @@ namespace CoreWebTest.Controllers
 
         public ViewResult List()
         {
-            ViewBag.Category = "123456789";
+            ViewBag.Category = "*******";
             var cars = _allCars.Cars; // получаем все машины из моделеей через интерфейс
             return View(cars); //Возврат вьюха
         }
