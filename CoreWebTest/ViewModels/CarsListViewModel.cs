@@ -18,7 +18,7 @@ namespace CoreWebTest.ViewModels
 
 
         /// <summary>
-        /// Свойство для работы с категорией
+        /// Свойство для работы с категориями
         /// </summary
         public string CurrentCategory { get; set; }
     }

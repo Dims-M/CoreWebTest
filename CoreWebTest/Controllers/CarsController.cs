@@ -31,7 +31,7 @@ namespace CoreWebTest.Controllers
 
            // ViewBag.Category = "*******";
            //  var cars = _allCars.Cars; // получаем все машины из моделеей через интерфейс
-            return View(obj); //Возврат вьюха
+            return View(obj); //Возврат вьюха с обьектом в котором находятся все нужные данные
         }
     }
 }
