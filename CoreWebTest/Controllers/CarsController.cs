@@ -25,6 +25,7 @@ namespace CoreWebTest.Controllers
 
         public ViewResult List()
         {
+            ViewBag.Title = "Страница с автомобилями";
             CarsListViewModel obj = new CarsListViewModel();
             obj.AllCars = _allCars.Cars; // получение всех автомоблей
             obj.CurrentCategory = "Автомобили"; // категории товара
