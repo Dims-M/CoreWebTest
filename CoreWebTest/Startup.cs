@@ -7,12 +7,23 @@ using CoreWebTest.Data.Mocks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CoreWebTest
 {
     public class Startup
     {
+        private IConfigurationRoot _confString;
+
+        //конструктор
+       public Startup(IHostingEnvironment hostEnv)
+        {
+            //При создании любого обьекта. Будет созодватся строка подключения к БД
+            _confString = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
+        }
+
+
         //Этот метод вызывается средой выполнения. Этот метод используется для добавления служб в контейнер.
         // Дополнительные сведения о настройке приложения см. На странице https://go.microsoft.com/fwlink/?LinkID=398940
         // для регистрации дополнительных модулей
