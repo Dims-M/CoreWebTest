@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreWebTest.Data;
 using CoreWebTest.Data.interfaces;
 using CoreWebTest.Data.Mocks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,7 +21,7 @@ namespace CoreWebTest
         //конструктор
        public Startup(IHostingEnvironment hostEnv)
         {
-            //При создании любого обьекта. Будет созодватся строка подключения к БД
+            //При создании любого обьекта. Будет создаватся строка подключения к БД. С помощью этого метода
             _confString = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
         }
 
@@ -29,6 +31,7 @@ namespace CoreWebTest
         // для регистрации дополнительных модулей
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection"))); // дбавляем загрузку строки с настройками sql базы
             services.AddTransient<IAllCars, MockCars>(); // Позволяет обьединить интерфейс и класс реализовывабщий этот интерфейс // Добавляет временную службу типа, указанного в поле Тип службы с фабрикой
             services.AddTransient<ICarsCategory, MockCategory>();
             services.AddMvc(); // gподключаем модуль мвс
