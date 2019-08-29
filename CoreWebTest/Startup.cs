@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CoreWebTest.Data;
 using CoreWebTest.Data.interfaces;
 using CoreWebTest.Data.Mocks;
+using CoreWebTest.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,8 +33,10 @@ namespace CoreWebTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection"))); // дбавляем загрузку строки с настройками sql базы
-            services.AddTransient<IAllCars, MockCars>(); // Позволяет обьединить интерфейс и класс реализовывабщий этот интерфейс // Добавляет временную службу типа, указанного в поле Тип службы с фабрикой
-            services.AddTransient<ICarsCategory, MockCategory>();
+           // services.AddTransient<IAllCars, MockCars>(); // Позволяет обьединить интерфейс и класс реализовывабщий этот интерфейс // Добавляет временную службу типа, указанного в поле Тип службы с фабрикой
+            services.AddTransient<IAllCars, CarRepository>(); // Позволяет обьединить интерфейс и класс реализовывабщий этот интерфейс // Добавляет временную службу типа, указанного в поле Тип службы с фабрикой
+          //  services.AddTransient<ICarsCategory, MockCategory>();
+            services.AddTransient<ICarsCategory, CategoryRepository>();
             services.AddMvc(); // gподключаем модуль мвс
         }
 

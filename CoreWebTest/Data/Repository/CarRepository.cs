@@ -32,15 +32,26 @@ namespace CoreWebTest.Data.Repository
         /// <summary>
         ///Свойство Получает все товары с главной страници с атрибутом фаворит из БД САR
         /// </summary>
-        public IEnumerable<Car> GeFavtCars => appDBContext.Car.Where(c => c.IsFavourite); //
+        public IEnumerable<Car> GeFavtCars => appDBContext.Car.Where(c => c.IsFavourite).Include(c=>c.Category); // ПОЛУЧАЕМ все категории товаров  IsFavourite с атрибутом тру и выводим с списком с категориями
+
+        /// <summary>
+        ///Свойство Позволяет добавить данные в БД. Пока не работает.
+        /// </summary>
+        IEnumerable<Car> IAllCars.GeFavtCars { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         /// <summary>
         ///Свойство Получает по ID товары из БД САR
         /// </summary>
-        public Car GetObectCar(int catId)
-        {
-           var GetIdCar = appDBContext.Car.Where(c => c.Id == catId);
-            return (Car)GetIdCar; // TODO ?????????????????????????????Ы  НЕ факт что будет работать
-        }
+        //public Car GetObectCar(int catId)
+        //{
+        //   var GetIdCar = appDBContext.Car.Where(c => c.Id == catId);
+        //    return (Car)GetIdCar; // TODO ?????????????????????????????Ы  НЕ факт что будет работать
+        //}
+
+       
+        public Car GetObectCar(int catId) => appDBContext.Car.FirstOrDefault(item => item.Id == catId); //получаем первое нужное совпадение при поиске по ip
+        //Аналогичный метод
+
+
     }
 }
