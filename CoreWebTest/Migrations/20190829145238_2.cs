@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CoreWebTest.Migrations
 {
-    public partial class Initial : Migration
+    public partial class _2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -34,7 +34,6 @@ namespace CoreWebTest.Migrations
                     price = table.Column<int>(nullable: false),
                     IsFavourite = table.Column<bool>(nullable: false),
                     available = table.Column<bool>(nullable: false),
-                    CategoryID = table.Column<int>(nullable: false),
                     CategoryId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

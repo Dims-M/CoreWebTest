@@ -18,7 +18,7 @@ namespace CoreWebTest.Data.Models
         public ushort price { set; get; }
         public bool IsFavourite { set; get; } // отображение на главнойй странице
         public bool available { set; get; } // товар на складе. Сколько в запасе
-        public ushort CategoryID { set; get; } //ID категорииы
+      //  public ushort CategoryID { set; get; } //ID категорииы
         /// <summary>
         /// Свойство хранит категории товаров. Пока есть 2 категории
         /// </summary>

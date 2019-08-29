@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoreWebTest.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    [Migration("20190829144309_Initial")]
-    partial class Initial
+    [Migration("20190829145238_2")]
+    partial class _2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,8 +26,6 @@ namespace CoreWebTest.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CategoryID");
 
                     b.Property<int?>("CategoryId");
 

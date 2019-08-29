@@ -25,8 +25,6 @@ namespace CoreWebTest.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryID");
-
                     b.Property<int?>("CategoryId");
 
                     b.Property<string>("Img");
