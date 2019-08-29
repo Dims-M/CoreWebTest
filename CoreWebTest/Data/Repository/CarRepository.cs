@@ -25,15 +25,22 @@ namespace CoreWebTest.Data.Repository
         }
             
         /// <summary>
-        /// Получаем все категории из БД САR
+        ///Свойство Получает все категории из БД САR
         /// </summary>
         public IEnumerable<Car> Cars => appDBContext.Car.Include(c => c.Category);
 
-        public IEnumerable<Car> GeFavtCars { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        /// <summary>
+        ///Свойство Получает все товары с главной страници с атрибутом фаворит из БД САR
+        /// </summary>
+        public IEnumerable<Car> GeFavtCars => appDBContext.Car.Where(c => c.IsFavourite); //
 
+        /// <summary>
+        ///Свойство Получает по ID товары из БД САR
+        /// </summary>
         public Car GetObectCar(int catId)
         {
-            throw new NotImplementedException();
+           var GetIdCar = appDBContext.Car.Where(c => c.Id == catId);
+            return (Car)GetIdCar; // TODO ?????????????????????????????Ы  НЕ факт что будет работать
         }
     }
 }
