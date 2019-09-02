@@ -30,7 +30,7 @@ namespace CoreWebTest.Data.Mocks
                         Img = "/img/tesla.jpg",
                         price =45000,
                         IsFavourite =true,
-                        available =true,
+                        available =true, 
                         Category = _carsCategory.AllCategories.First()
                 },
                 new Car

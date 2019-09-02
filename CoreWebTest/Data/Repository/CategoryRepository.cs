@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace CoreWebTest.Data.Repository
 {
+    /// <summary>
+    /// Класс отвечает за связь с БД.
+    /// </summary>
     public class CategoryRepository : ICarsCategory
     {
         /// <summary>

@@ -47,16 +47,8 @@ namespace CoreWebTest
             app.UseStatusCodePages(); // оображаем статусы страничек //400, 500, 200
             app.UseStaticFiles(); // отображаем статические файлы 
             app.UseMvcWithDefaultRoute();  // включение мвс патерна  отслеживание урл адреса. и вьюхи к этим адресам
-
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
+            
+            DBObjects.Initial(app); //Обращаемся для инициализации БД. Если база пустая то заполняется первоночальными значениями
         }
     }
 }
