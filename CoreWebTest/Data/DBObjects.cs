@@ -20,8 +20,14 @@ namespace CoreWebTest.Data
         /// <param name="app"></param>
         public static void Initial(IApplicationBuilder app)  
         {
+            AppDBContent content;
+            using (var scope = app.ApplicationServices.CreateScope()) // метод CreateScope создаем область видимости сервиса
+            {
+                content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
+            }
+
             ///Связь с БД через  AppDBContent content
-            AppDBContent content = app.ApplicationServices.GetRequiredService<AppDBContent>();
+          //  AppDBContent content = app.ApplicationServices.GetRequiredService<AppDBContent>();
 
             ///Проверяем. Если категория пустая. То будет тру. И будет автозаполнение БД первоночальными данными
             if (!content.Category.Any())
