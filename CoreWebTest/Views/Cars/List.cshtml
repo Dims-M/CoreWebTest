@@ -17,15 +17,17 @@
 <h3>@Model.CurrentCategory</h3> <h1>@ViewBag.Category</h1>
 <div class="row mt-5 mb-2">
     @{
-        foreach (var car in Model.AllCars) // c помощью специалнього обьекта Model. в него передается данные при вызове вьюхи
+        foreach (Car car in Model.AllCars) // c помощью специалнього обьекта Model. в него передается данные при вызове вьюхи
         {
+            @Html.Partial("AllCars",car)
+            @*
             <div class="col-lg-5">
                 <img class="Img-thumbnail" src="@car.Img" alt="car.name" />
                 <h2>Модель: @car.Name</h2>
                 <p>Цена: @car.price.ToString("c")</p>
                 <h2>Описание: @car.ShortDesc</h2>
             </div>
-        
+        *@
 
           }
          }

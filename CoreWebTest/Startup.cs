@@ -47,8 +47,16 @@ namespace CoreWebTest
             app.UseStatusCodePages(); // оображаем статусы страничек //400, 500, 200
             app.UseStaticFiles(); // отображаем статические файлы 
             app.UseMvcWithDefaultRoute();  // включение мвс патерна  отслеживание урл адреса. и вьюхи к этим адресам
-            
-            DBObjects.Initial(app); //Обращаемся для инициализации БД. Если база пустая то заполняется первоночальными значениями
+
+          //  AppDBContent content;
+
+            using (var scope = app.ApplicationServices.CreateScope()) // метод CreateScope создаем область видимости сервиса
+            {
+                AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
+                DBObjects.Initial(content); //content//Обращаемся для инициализации БД. Если база пустая то заполняется первоночальными значениями
+            };
+
+           // DBObjects.Initial(app); //Обращаемся для инициализации БД. Если база пустая то заполняется первоночальными значениями
         }
     }
 }

@@ -18,13 +18,8 @@ namespace CoreWebTest.Data
         /// Метод Initial инизиализует пустую базу данных
         /// </summary>
         /// <param name="app"></param>
-        public static void Initial(IApplicationBuilder app)  
+        public static void Initial(AppDBContent content)  
         {
-            AppDBContent content;
-            using (var scope = app.ApplicationServices.CreateScope()) // метод CreateScope создаем область видимости сервиса
-            {
-                content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
-            }
 
             ///Связь с БД через  AppDBContent content
           //  AppDBContent content = app.ApplicationServices.GetRequiredService<AppDBContent>();
@@ -108,7 +103,7 @@ namespace CoreWebTest.Data
                     );
             }
 
-
+            content.SaveChanges(); // сохраняем данные в БД
         }
 
         private static Dictionary<string, Category> category;
@@ -125,7 +120,7 @@ namespace CoreWebTest.Data
                     var list = new Category[]
                     {
                 new Category { CategoryName = "Электромобили", desc = "Современнные высокотехнологичный вид транспорта" },
-                new Category { CategoryName = "Классичискте автомобили", desc = "Машины с двигателем внутреннего сгорания" },
+                new Category { CategoryName = "Классические автомобили", desc = "Машины с двигателем внутреннего сгорания" },
                 new Category { CategoryName = "Дизель автомобили", desc = "Машины с дизельным двигателем внутреннего сгорания" }
                     };
                     category = new Dictionary<string, Category>();
