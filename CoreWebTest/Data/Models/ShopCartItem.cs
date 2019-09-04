@@ -11,7 +11,7 @@ namespace CoreWebTest.Data.Models
     public class ShopCartItem
     {
         
-        public int ItemId { set; get; } // получение ID товара
+        public int Id { set; get; } // получение ID товара
 
         public Car Сar { get; set; } // Само свойство для получения товара и добавление его в корзину покупки
 
