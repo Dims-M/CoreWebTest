@@ -1,5 +1,7 @@
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=Shop;Trusted_Connection=True;MultipleActiveResultSets=true"
+     "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=Shop;Trusted_Connection=True;MultipleActiveResultSets=true",
+ // "DefaultConnection": "Data Source=(localdb)\\MSSQLLocalDB;Database=Shop;Trusted_Connection=True;MultipleActiveResultSets=true"
+    //                    Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dmytriy\Documents\test.mdf;Integrated Security=True;Connect Timeout=30
   }
 }
